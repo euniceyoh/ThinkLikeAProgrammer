@@ -16,7 +16,7 @@ using std::cin;
 using std::cout;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
+    
     for(int rows = 1; rows <= 4; rows++){
         
         for(int hashMarks = 1; hashMarks <=  10 - (rows*2); hashMarks++){
