@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     for(int rows = 1; rows <= 4; rows++){
         
-        for(int hashMarksLeft = 1; hashMarksLeft <=  10 - (rows*2); hashMarksLeft++){
+        for(int hashMarks = 1; hashMarks <=  10 - (rows*2); hashMarks++){
             cout << "#";
         }
         cout << "\n";
