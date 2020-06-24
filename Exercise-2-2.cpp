@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
             cout << ' ';
         }
         
-        for(int hashMarksLeft = 1; hashMarksLeft <= 2 * topRow; hashMarksLeft++){
+        for(int hashMarks = 1; hashMarks <= 2 * topRow; hashMarks++){
             cout << "#";
         }
         cout << "\n";
