@@ -8,7 +8,6 @@
 #include <iostream>
 using std::cin;
 using std::cout;
-using std::string;
 
 bool isSorted(int array[], int ARRAY_SIZE){
     for(int i = 0; i < ARRAY_SIZE - 1; i++){
