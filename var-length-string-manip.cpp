@@ -1,5 +1,6 @@
+
 /*
- [Book Example] Pointer Problem: Variable-Length String Manipulation
+ Pointer Problem: Variable-Length String Manipulation
  * append
  * concatenate
  * characterAt
@@ -84,5 +85,8 @@ int main() {
     concatenate(d,c);
     
     cout << c << endl << d << endl;
-    cout << (void * ) c << endl << (void *) d << endl;
+    cout << (void * ) c << endl << (void *) d << endl; //forces output to display raw values of pointers
 }
+
+    
+
