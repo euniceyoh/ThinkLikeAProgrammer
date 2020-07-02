@@ -1,4 +1,4 @@
-*
+/*
  [Book Example] Pointer Problem: Variable-Length String Manipulation
  * append
  * concatenate
