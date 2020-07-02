@@ -1,6 +1,6 @@
 
 /*
- Pointer Problem: Variable-Length String Manipulation
+ [Book Example] Pointer Problem: Variable-Length String Manipulation
  * append
  * concatenate
  * characterAt
