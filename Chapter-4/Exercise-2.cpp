@@ -25,8 +25,6 @@ arrayString substring(arrayString s, int start, int length){
 }
 
 int main() {
-    
-    //test case 3:
     arrayString e = new char[7];
     e[0] = 'e'; e[1] = 'u'; e[2] = 'n'; e[3] = 'i'; e[4] = 'c'; e[5] = 'e'; e[6] = 0;
     
