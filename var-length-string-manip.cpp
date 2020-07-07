@@ -1,8 +1,10 @@
-*
+
+/*
  [Book Example] Pointer Problem: Variable-Length String Manipulation
- * append
- * concatenate
- * characterAt
+ * Write heap-based implementations for three required string functions:
+ * append: This function takes a string and a character and appends the character to the end of the string.
+ * concatenate: This function takes two strings and appends the characters of the second string onto the first.
+ * characterAt: This function takes a string and a number and returns the character at that position in the string (with the first character in the string numbered zero).
  */
 
 #include <iostream>
@@ -84,5 +86,8 @@ int main() {
     concatenate(d,c);
     
     cout << c << endl << d << endl;
-    cout << (void * ) c << endl << (void *) d << endl;
+    cout << (void * ) c << endl << (void *) d << endl; //forces output to display raw values of pointers
 }
+
+    
+
