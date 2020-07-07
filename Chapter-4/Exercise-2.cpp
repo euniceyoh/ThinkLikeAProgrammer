@@ -1,7 +1,9 @@
 /*
-Create a function substring that takes three parameters: an arrayString, a starting position integer, and an integer length of characters. 
-The function returns a pointer to a new dynamically allocated string array. This string array contains the characters in the original string, 
-starting at the specified position for the specified length. The original string is unaffected by the operation.
+Exercise 4-2:
+For our dynamically allocated strings, create a function substring that takes three parameters: an arrayString, a starting position integer, 
+and an integer length of characters. The function returns a pointer to a new dynamically allocated string array. 
+This string array contains the characters in the original string, starting at the specified position for the specified length. 
+The original string is unaffected by the operation.
 */
 
 #include <iostream>
