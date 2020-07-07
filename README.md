@@ -1,2 +1,2 @@
 # ThinkLikeAProgrammer
-Storing my practice code while trying the exercises in the book. 
+Storing coding examples and my practice code while trying the exercises in the book. 
