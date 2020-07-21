@@ -60,5 +60,16 @@ int main() {
     for (int n=0; n<5; n++)
       cout << numbers[n] << ", ";
     
+    /*
+    Pointer Arithmetics
+    */
+    
+    *p++   // same as *(p++): increment pointer, and dereference unincremented address
+    *++p   // same as *(++p): increment pointer, and dereference incremented address
+    ++*p   // same as ++(*p): dereference pointer, and increment the value it points to
+    (*p)++ // dereference pointer, and post-increment the value it points to 
+
+    
     return 0; 
+  
 }
