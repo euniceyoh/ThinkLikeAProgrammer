@@ -75,14 +75,59 @@ arrayString substring(arrayString s, int start, int length){
 }
 
 /*
+ function that returns true if two strings are equal, otherwise, false
+ */
+bool isEqual(arrayString stringA, arrayString stringB, int length){
+    bool match = true;
+    for(int i = 0; i < length; i++){
+        if(stringA[i] != stringB[i]){
+            match = false;
+        }
+    }
+    return match;
+}
+
+/*
  replaces every occurence of target in source with replaceText
  */
-void replaceString(arrayString source, arrayString target, arrayString replaceText){
-     
+void replaceString(arrayString &source, arrayString target, arrayString replaceText){
+    int sourceSize = length(source);
+    int targetSize = length(target);
+    int replaceSize = length(replaceText);
+    
+    for(int i = 0; i < sourceSize - 1;){
+        
+        arrayString substr = substring(source, i, targetSize);
+        cout << substr << endl;
+        
+        bool aMatch = isEqual(substr, target, targetSize);
+        
+        if(aMatch){ // if the sequence of chars in substr is equal to that of target
+            arrayString start = substring(source, 0, i);
+            arrayString end = substring(source, i + targetSize, sourceSize - (i+targetSize));
+            cout << "Start: " << start << " End: " << end << endl;
+            
+            concatenate(start, replaceText); // start = xyzcd
+            concatenate(start, end);         // start = xyzcdabee
+        
+            source = start;              // source = xyzcdabee
+        
+            cout << "Updated String: " << source << endl;
+            
+            sourceSize = length(source); // update new source length
+            i+= replaceSize; // replaceSize = 3
+    
+        } else {
+            cout << "Substring not equal " << endl;
+            i++;
+        }
+        
+    }
 }
 
 int main() {
     
+    // test
     arrayString f = new char[9];
     f[0] = 'a'; f[1] = 'b'; f[2] = 'c'; f[3] = 'd'; f[4] = 'a'; f[5] = 'b';  f[6] = 'e'; f[7] = 'e'; f[8] = 0;
     
@@ -94,7 +139,19 @@ int main() {
     
     replaceString(f, subF, newSubF);
     
-    //cout << f << endl;
+    cout << "New Source String: " << f << endl;
+ 
+    // another test
+    arrayString test = new char [7];
+    test[0] = 'e'; test[1] = 'u'; test[2] = 'n'; test[3] = 'i'; test[4] = 'c'; test[5] = 'e'; test[6] = 0;
+    arrayString look = new char[5];
+    look[0] = 'n'; look[1] = 'i'; look[2] = 'c'; look[3] = 'e'; look[4] = 0;
+    arrayString replaceWith = new char[5];
+    replaceWith[0] = 'm'; replaceWith[1] = 'e'; replaceWith[2] = 'a'; replaceWith[3] = 'n'; replaceWith[4] = 0;
+    
+    replaceString(test, look, replaceWith);
+    
+    cout << "New Source String: " << test << endl;
     
     return 0; 
 }
