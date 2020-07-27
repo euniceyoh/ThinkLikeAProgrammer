@@ -44,8 +44,9 @@ bool removeRecord(studentCollection &sc, int stuNum){
     // if record to be removed is in middle or tail of collection
     while(loopPtr->next != NULL){
         if(loopPtr->next->studentNum == stuNum){
-            delete loopPtr->next;
+            listNode * foundRecord = loopPtr->next;
             loopPtr->next = loopPtr->next->next; // loopPtr->next will be NULL if removed record is last node
+            delete foundRecord;
             return true;
         }
         loopPtr = loopPtr->next;
