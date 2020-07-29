@@ -55,10 +55,7 @@ bool removeRecord(studentCollection &sc, int stuNum){
         delete curr;
         return true;
     }
-    
     return false;
-}
-
 }
 
 bool printCollection(studentCollection sc){
