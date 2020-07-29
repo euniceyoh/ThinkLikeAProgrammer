@@ -27,32 +27,38 @@ void addRecord(studentCollection &sc, int stuNum, int gr){ //sc is reference par
 
 // removes record with student number "stuNum" from the collection
 bool removeRecord(studentCollection &sc, int stuNum){
-    listNode * loopPtr = sc;
-    
+     
     // if collection is empty
-    if(loopPtr == NULL){
+    if(sc == NULL){
         return false;
     }
     
     // if record to be removed is head
-    if(loopPtr->studentNum == stuNum){
-        sc = loopPtr->next;
-        delete loopPtr;
+    if(sc->studentNum == stuNum){
+        listNode * temp = sc;
+        sc = sc->next;
+        delete temp;
         return true;
     }
     
     // if record to be removed is in middle or tail of collection
-    while(loopPtr->next != NULL){
-        if(loopPtr->next->studentNum == stuNum){
-            listNode * foundRecord = loopPtr->next;
-            loopPtr->next = loopPtr->next->next; // loopPtr->next will be NULL if removed record is last node
-            delete foundRecord;
-            return true;
-        }
-        loopPtr = loopPtr->next;
+    listNode * prev = sc;
+    listNode * curr = sc->next;
+
+    while(curr != NULL && curr->studentNum != stuNum){
+        curr = curr->next;
+        prev = prev->next;
+    }
+    
+    if(curr != NULL){
+        prev->next = curr->next; // prev->next will be NULL if removed record is last node
+        delete curr;
+        return true;
     }
     
     return false;
+}
+
 }
 
 bool printCollection(studentCollection sc){
